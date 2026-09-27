@@ -1,0 +1,85 @@
+
+:root {
+  color-scheme: light;
+  --brand: #2948bd;
+  --brand-dark: #1c328c;
+  --brand-soft: #edf1ff;
+  --ink: #19233d;
+  --muted: #5f6b85;
+  --surface: #fff;
+  --page: #f5f7fc;
+  --line: #e1e7f2;
+  --success: #137547;
+  --danger: #b42318;
+  --radius: 1.1rem;
+  --shadow: 0 8px 28px rgb(28 45 90 / 7%);
+  --content: 72rem;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 5.5rem; }
+body {
+  margin: 0; color: var(--ink); background: var(--page);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 1rem; line-height: 1.65; text-rendering: optimizeLegibility;
+}
+a { color: var(--brand); }
+a:focus-visible, button:focus-visible, input:focus-visible, summary:focus-visible {
+  outline: 3px solid #f5a623; outline-offset: 3px;
+}
+.hero { padding: clamp(2.5rem, 7vw, 5rem) 1rem 3rem; color: #fff; text-align: center; background: linear-gradient(135deg,#1e348f,#5278ee); }
+.hero__inner,.container { width: min(100% - 2rem,var(--content)); margin-inline: auto; }
+.eyebrow { display:inline-block; padding:.25rem .8rem; border-radius:999px; background:rgb(255 255 255 / 18%); font-size:.85rem; font-weight:800; letter-spacing:.06em; }
+h1 { margin:.7rem 0 .5rem; font-size:clamp(2rem,6vw,3.6rem); line-height:1.12; letter-spacing:-.035em; }
+.hero p { max-width:44rem; margin:0 auto; font-size:clamp(1rem,2.4vw,1.15rem); }
+.nav { position:sticky; top:0; z-index:10; display:flex; justify-content:center; gap:.35rem; padding:.65rem 1rem; overflow-x:auto; background:rgb(255 255 255 / 96%); border-bottom:1px solid var(--line); backdrop-filter:blur(12px); scrollbar-width:thin; }
+.nav a { flex:0 0 auto; padding:.5rem .85rem; border-radius:999px; text-decoration:none; font-weight:750; font-size:.92rem; }
+.nav a:hover,.nav a:focus-visible { background:var(--brand-soft); }
+main.container { padding-block:1.5rem 4rem; }
+.welcome,.panel { background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); }
+.welcome { padding:clamp(1rem,3vw,1.5rem); margin-bottom:1.25rem; }
+.panel { padding:clamp(1rem,3.5vw,2rem); margin-block:1.25rem; }
+h2 { margin:0 0 .5rem; color:var(--brand-dark); font-size:clamp(1.45rem,3.5vw,2rem); line-height:1.25; }
+h3 { margin:1.2rem 0 .5rem; font-size:1.15rem; line-height:1.35; }
+p { margin-block:.5rem 1rem; }
+.muted { color:var(--muted); }
+.grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,15rem),1fr)); gap:1rem; }
+.card { min-width:0; padding:1rem; border:1px solid var(--line); border-radius:.9rem; background:#fbfcff; }
+.card h3 { margin-top:0; }
+.emoji { font-size:1.8rem; }
+.example { margin-block:.65rem; padding:.7rem .9rem; border-left:4px solid #7b91ed; border-radius:0 .65rem .65rem 0; background:#f6f8ff; }
+.english { color:var(--brand-dark); font-weight:800; }
+.translation { color:var(--muted); }
+.tip { margin-block:1rem; padding:1rem; border:1px solid #f0dfa1; border-radius:.8rem; background:#fff9e6; }
+.table-wrap { max-width:100%; overflow-x:auto; border:1px solid var(--line); border-radius:.75rem; margin-block:1rem; }
+table { width:100%; border-collapse:collapse; background:#fff; }
+th,td { padding:.7rem .85rem; text-align:left; vertical-align:top; border-bottom:1px solid var(--line); }
+th { background:#eff3ff; color:var(--brand-dark); font-weight:800; }
+tbody tr:last-child td { border-bottom:0; }
+.alphabet-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(4.2rem,1fr)); gap:.6rem; margin-block:1rem; }
+.letter { display:grid; place-items:center; min-height:5rem; padding:.5rem .25rem; border:1px solid var(--line); border-radius:.8rem; background:#fbfcff; text-align:center; }
+.letter strong { color:var(--brand-dark); font-size:1.45rem; line-height:1.2; }
+.letter span { color:var(--muted); font-size:.82rem; }
+.number-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(7rem,1fr)); gap:.5rem; }
+.number { padding:.65rem .75rem; border:1px solid var(--line); border-radius:.7rem; background:#fbfcff; }
+.number strong { display:block; color:var(--brand-dark); }
+.number span { display:block; color:var(--muted); font-size:.88rem; overflow-wrap:anywhere; }
+details { margin-block:.7rem; padding:.85rem 1rem; border:1px solid var(--line); border-radius:.8rem; background:#fbfcff; }
+summary { cursor:pointer; color:var(--brand-dark); font-weight:800; }
+.quiz-question { padding-block:1rem; border-bottom:1px solid var(--line); }
+.quiz-question p { margin:0 0 .65rem; font-weight:800; }
+.options { display:grid; gap:.5rem; }
+.options label { display:flex; align-items:flex-start; gap:.65rem; padding:.7rem .8rem; border:1px solid var(--line); border-radius:.7rem; background:#fbfcff; cursor:pointer; }
+.options input { margin-top:.35rem; accent-color:var(--brand); }
+.feedback { min-height:1.5rem; margin-top:.4rem; font-weight:750; }
+.correct { color:var(--success); } .incorrect { color:var(--danger); }
+.actions { display:flex; flex-wrap:wrap; gap:.7rem; margin-top:1rem; }
+button { min-height:2.75rem; padding:.7rem 1.15rem; border:0; border-radius:.75rem; background:var(--brand); color:#fff; font:inherit; font-weight:800; cursor:pointer; }
+button:hover { background:var(--brand-dark); }
+button.secondary { background:#e9edf8; color:var(--ink); }
+#score { margin-top:1rem; font-size:1.1rem; font-weight:850; }
+.phase-links { display:flex; flex-wrap:wrap; gap:.75rem; margin-top:1rem; }
+.phase-links a { display:inline-block; padding:.7rem 1rem; border-radius:.75rem; background:var(--brand-soft); text-decoration:none; font-weight:800; }
+footer { padding:2rem 1rem; color:var(--muted); text-align:center; }
+@media(min-width:60rem) { .nav { gap:.7rem; } .panel { margin-block:1.5rem; } }
+@media(max-width:38rem) { .hero { padding-block:2.5rem 2rem; } .nav { justify-content:flex-start; } th,td { padding:.6rem; font-size:.92rem; } .alphabet-grid { grid-template-columns:repeat(4,minmax(0,1fr)); } .number-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } *,*::before,*::after { animation-duration:.01ms!important; transition-duration:.01ms!important; } }
